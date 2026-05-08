@@ -1,11 +1,12 @@
+using Chip8App.Models;
 using Raylib_cs;
 
 namespace CHIP8.Models;
 
-class Engine(int width, int height, string title, float scale)
+class Chip8(int width, int height, string title, float scale)
 {
-    private Color[] pixel_buffer = new Color[64*32];
-    private readonly Display display = new(width, height, title, scale);
+    private Display display = new(width, height, title, scale);
+    private Audio audio = new();
     private CPU cpu = new();
 
     public void Run()
@@ -22,5 +23,6 @@ class Engine(int width, int height, string title, float scale)
 
     }
 
-    private void Draw() => display.Draw(ref pixel_buffer);
+    private void Draw() => display.Draw();
+    private void PlayAudio() => throw new NotImplementedException();
 }
