@@ -13,6 +13,4 @@ class CPU()
     {
 
     }
-
-    private void  
 }
