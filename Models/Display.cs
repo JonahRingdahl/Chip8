@@ -1,7 +1,7 @@
 using System.Numerics;
 using Raylib_cs;
 
-namespace CHIP8;
+namespace CHIP8.Models;
 
 class Display
 {
@@ -68,4 +68,5 @@ class Display
     }
 
     ~Display() => Raylib.CloseWindow();
+
 }

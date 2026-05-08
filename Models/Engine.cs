@@ -1,6 +1,6 @@
 using Raylib_cs;
 
-namespace CHIP8;
+namespace CHIP8.Models;
 
 class Engine(int width, int height, string title, float scale)
 {

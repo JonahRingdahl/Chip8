@@ -1,4 +1,4 @@
-namespace CHIP8;
+namespace CHIP8.Models;
 
 class CPU()
 {
@@ -9,4 +9,10 @@ class CPU()
     UInt16 sp = 0;
 
 
+    public void Tick()
+    {
+
+    }
+
+    private void  
 }
