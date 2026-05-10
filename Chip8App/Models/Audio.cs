@@ -5,20 +5,20 @@ namespace Chip8App.Models;
 
 public class Audio
 {
-    AudioStream audioStream = new();
-    public Audio()
-    {
-        Raylib.InitAudioDevice();
-        
-    }
+  AudioStream audioStream = new();
+  public Audio()
+  {
+    Raylib.InitAudioDevice();
 
-    public void Play()
-    {
-    }
+  }
 
-    ~Audio()
-    {
-        Raylib.CloseAudioDevice();
-    }
+  public void Play()
+  {
+  }
+
+  ~Audio()
+  {
+    Raylib.CloseAudioDevice();
+  }
 
 }
