@@ -30,15 +30,15 @@ class CPU()
                      case 0x0000: { LD_VxVy_8XY0(cpu, (ushort) ((opcode & 0x0F00) >> 2), (ushort) ((opcode & 0x00F0) >> 1)); } break;
                      case 0x0001: { OR_VxVy_8XY1(cpu, (ushort) ((opcode & 0x0F00) >> 2), (ushort) ((opcode & 0x00F0) >> 1)); } break;
                      case 0x0002: { AND_VxVy_8XY2(cpu, (ushort) ((opcode & 0x0F00) >> 2), (ushort) ((opcode & 0x00F0) >> 1)); } break;
-                     case 0x0003: { XOR_VxVy_8XY3(cpu), (ushort) ((opcode & 0x0F00) >> 2), (ushort) ((opcode & 0x00F0) >> 1); } break;
+                     case 0x0003: { XOR_VxVy_8XY3(cpu, (ushort) ((opcode & 0x0F00) >> 2), (ushort) ((opcode & 0x00F0) >> 1)); } break;
                      case 0x0004: { ADD_VxVy_8XY4(cpu, (ushort) ((opcode & 0x0F00) >> 2), (ushort) ((opcode & 0x00F0) >> 1)); } break;
                      case 0x0005: { SUB_VxVy_8XY5(cpu, (ushort) ((opcode & 0x0F00) >> 2), (ushort) ((opcode & 0x00F0) >> 1)); } break;
                      case 0x0006: { SHR_Vx_Vy_8XY6(cpu, (ushort) ((opcode & 0x0F00) >> 2), (ushort) ((opcode & 0x00F0) >> 1)); } break;
                      case 0x0007: { SUBN_VxVy_8XY7(cpu, (ushort) ((opcode & 0x0F00) >> 2), (ushort) ((opcode & 0x00F0) >> 1)); } break;
                      case 0x000E: { SHL_Vx_Vy_8XYE(cpu, (ushort) ((opcode & 0x0F00) >> 2), (ushort) ((opcode & 0x00F0) >> 1)); } break;
                    } break;
-      case 0xA000: { LD_I_ADR_ANNN(cpu, (ushort) ((opcode & 0x0FFF))); } break;
-      case 0xB000: { JP_V0_ADR_BNNN(cpu, (ushort) ((opcode & 0x0FFF))); } break;
+      case 0xA000: { LD_I_ADR_ANNN(cpu, (ushort) (opcode & 0x0FFF)); } break;
+      case 0xB000: { JP_V0_ADR_BNNN(cpu, (ushort) (opcode & 0x0FFF)); } break;
       case 0xC000: { RND_Vx_BYTE_CXKK(cpu, (ushort) ((opcode & 0x0F00) >> 2), (ushort) ())}break;
       case 0xD000: break;
       case 0xE000: break;
