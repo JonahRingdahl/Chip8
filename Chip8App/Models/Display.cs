@@ -24,21 +24,18 @@ class Display
     this.scale = scale;
   }
 
-  public static bool DrawSinglePixel(int x, int y, bool on, ref bool[] display_buffer)
+  // public static bool DrawSinglePixel(int x, int y, bool on, ref bool[] display_buffer)
+  // {
+  //   var idx = (y * DISPLAY_WIDTH) + x;
+
+  //   if (idx < 0 || idx >= display_buffer.Length) return false;
+
+  //   display_buffer[idx] = on;
+  //   return true;
+  // }
+
+  public static bool NumIntoBuffer(int x, int y, ushort data, ref bool[] display_buffer)
   {
-    var idx = (y * DISPLAY_WIDTH) + x;
-
-    if (idx < 0 || idx >= display_buffer.Length) return false;
-
-    display_buffer[idx] = on;
-    return true;
-  }
-
-  public static bool NumIntoBuffer(Vector2 start, ushort data, ref bool[] display_buffer)
-  {
-    var x = (int)start.X;
-    var y = (int)start.Y;
-
     for (int i = 0; i < 16; i++)
     {
       int bitIdx = 15 - i;
@@ -53,6 +50,17 @@ class Display
 
     return true;
   }
+
+  public static bool DataIntoBuffer(Vector2 start, ushort[] data, ref bool[] display_buffer)
+  {
+    for (int i = 0; i < data.Length; i++)
+    {
+      if (!NumIntoBuffer((int)start.X, (int)start.Y + i, data[i], ref display_buffer)) return false;
+    }
+    return true;
+  }
+
+
   public void Draw(ref bool[] display_buffer)
   {
     Raylib.BeginDrawing();
