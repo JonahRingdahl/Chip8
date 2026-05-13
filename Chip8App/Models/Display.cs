@@ -78,4 +78,87 @@ class Display
 
   ~Display() => Raylib.CloseWindow();
 
+  public static readonly ushort[] ZERO = [
+    0xF0,
+    0x90,
+    0x90,
+    0x90,
+    0xF0,
+  ];
+
+  public static readonly ushort[] ONE = [
+    0x20,
+    0x60,
+    0x20,
+    0x20,
+    0x70
+  ];
+  public static readonly ushort[] TWO = [
+    0xF0,
+    0x10,
+    0xF0,
+    0x80,
+    0xF0
+  ];
+
+  public static readonly ushort[] THREE = [
+    0xF0,
+    0x90,
+    0x90,
+    0x90,
+    0xF0,
+  ];
+
+  public static readonly ushort[] FOUR = [
+    0x20,
+    0x60,
+    0x20,
+    0x20,
+    0x70
+  ];
+  public static readonly ushort[] FIVE = [
+    0xF0,
+    0x10,
+    0xF0,
+    0x80,
+    0xF0
+  ];
+
+  public static readonly ushort[] SIX = [
+    0x20,
+    0x60,
+    0x20,
+    0x20,
+    0x70
+  ];
+  public static readonly ushort[] Seven= [
+    0xF0,
+    0x10,
+    0xF0,
+    0x80,
+    0xF0
+  ];
+
+  public static readonly ushort[] THREE = [
+    0xF0,
+    0x90,
+    0x90,
+    0x90,
+    0xF0,
+  ];
+
+  public static readonly ushort[] FOUR = [
+    0x20,
+    0x60,
+    0x20,
+    0x20,
+    0x70
+  ];
+  public static readonly ushort[] FIVE = [
+    0xF0,
+    0x10,
+    0xF0,
+    0x80,
+    0xF0
+  ];
 }
