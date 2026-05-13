@@ -43,7 +43,8 @@ class Display
 
       int bufferIdx = (y * DISPLAY_WIDTH) + x + i;
 
-      if (bufferIdx < 0 || bufferIdx >= display_buffer.Length) return false;
+      if (bufferIdx < 0 || bufferIdx >= display_buffer.Length) 
+        return false;
 
       display_buffer[bufferIdx] = bit;
     }
@@ -54,9 +55,9 @@ class Display
   public static bool DataIntoBuffer(Vector2 start, ushort[] data, ref bool[] display_buffer)
   {
     for (int i = 0; i < data.Length; i++)
-    {
-      if (!NumIntoBuffer((int)start.X, (int)start.Y + i, data[i], ref display_buffer)) return false;
-    }
+      if (!NumIntoBuffer((int)start.X, (int)start.Y + i, data[i], ref display_buffer)) 
+        return false;
+
     return true;
   }
 
